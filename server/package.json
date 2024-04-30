@@ -2,11 +2,11 @@
   "name": "server",
   "version": "1.0.0",
   "description": "",
-  "main": "instagramPhishing.js",
+  "main": "index.js",
   "type": "module",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "nodemon -r dotenv/config instagramPhishing.js"
+    "start": "nodemon -r dotenv/config index.js"
   },
   "author": "",
   "license": "ISC",
